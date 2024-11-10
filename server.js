@@ -7,6 +7,7 @@ dotenv.config()
 
 const restaurantRoutes = require('./routes/restaurant')
 const feedbackRoutes = require('./routes/feedback')
+const authRoutes = require('./routes/auth')
 
 const app = express()
 connectDB()
@@ -17,6 +18,7 @@ app.use(express.json())
 
 app.use('/api/restaurants', restaurantRoutes)
 app.use('/api/feedback', feedbackRoutes)
+app.use('/api/login', authRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
